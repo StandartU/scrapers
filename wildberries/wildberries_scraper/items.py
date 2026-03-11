@@ -5,8 +5,17 @@
 
 import scrapy
 
-
-class WildberriesScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class WildberriesClothItem(scrapy.Item):
+    url = scrapy.Field()
+    article = scrapy.Field()
+    name = scrapy.Field()
+    price = scrapy.Field()
+    description = scrapy.Field()
+    characteristics = scrapy.Field()
+    images = scrapy.Field()
+    seller = scrapy.Field()
+    seller_url = scrapy.Field()
+    sizes = scrapy.Field()
+    quantity = scrapy.Field()
+    rating = scrapy.Field()
+    reviews = scrapy.Field()

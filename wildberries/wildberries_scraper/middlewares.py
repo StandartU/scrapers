@@ -67,6 +67,10 @@ class SeleniumMiddleware:
         return items;
         """)
 
+        user_agent = self.driver.execute_script("return navigator.userAgent;")
+
+        device_id = storage.get("wbx__sessionID")
+
         selenium_cookies = {
             cookie['name']: cookie['value']
             for cookie in self.driver.get_cookies()
@@ -80,7 +84,11 @@ class SeleniumMiddleware:
         else:
             x_info = {}
 
-        request.meta.update({"geo_params": x_info})
+        request.meta.update({
+            "geo_params": x_info,
+            "user_agent": user_agent,
+            "device_id": device_id
+        })
 
         self.driver.quit()
 
