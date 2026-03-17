@@ -6,7 +6,6 @@
 import scrapy
 
 
-class NeopharmScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class NeopharmScraperItemCatalog(scrapy.Item):
+    name = scrapy.Field()
+    price = scrapy.Field
